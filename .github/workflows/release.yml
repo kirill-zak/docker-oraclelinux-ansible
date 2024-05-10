@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: Checkout out the codebase
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Test building image
         run: podman build -t docker-oraclelinux-ansible:${{ matrix.version_branch }}.${{ matrix.version_minor_release }} ./oraclelinux${{ matrix.version_branch }}/. --build-arg VERSION=${{ matrix.version_branch }}.${{ matrix.version_minor_release }}
@@ -53,7 +53,7 @@ jobs:
 
     steps:
       - name: Checkout out the codebase
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Add Qemu
         uses: docker/setup-qemu-action@v2
@@ -92,7 +92,7 @@ jobs:
 
     steps:
       - name: Checkout out the codebase
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Add Qemu
         uses: docker/setup-qemu-action@v2
