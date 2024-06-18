@@ -75,7 +75,7 @@ jobs:
           password: ${{ secrets.GHCR_REGISTRY_TOKEN }}
 
       - name: Build and push image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           build-args: VERSION=${{ matrix.version_branch }}.${{ matrix.version_minor_release }}
           context: ./oraclelinux${{ matrix.version_branch }}/.
@@ -114,7 +114,7 @@ jobs:
           password: ${{ secrets.GHCR_REGISTRY_TOKEN }}
 
       - name: Build and push image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           build-args: VERSION=8.9
           context: ./oraclelinux8/.
